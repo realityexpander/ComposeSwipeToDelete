@@ -136,7 +136,7 @@ fun <T> SwipeToDeleteContainer(
         mutableStateOf(false)
     }
     val state = rememberDismissState(
-//        // Use this if you don't want confirmation step
+//        // Use this if you don't want the confirmation step
 //        confirmValueChange = { value ->
 //            if (value == DismissValue.DismissedToStart) {
 //                isRemoved = true
