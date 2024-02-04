@@ -21,7 +21,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.pager.PageSize.Fill.calculateMainAxisPageSize
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Clear
 import androidx.compose.material.icons.filled.Delete
@@ -44,13 +43,11 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.realityexpander.composeswipetodelete.ui.theme.composeswipetodeleteTheme
+import com.realityexpander.composeswipetodelete.ui.theme.ComposeSwipeToDeleteTheme
 import kotlinx.coroutines.delay
-import java.time.format.TextStyle
 import kotlin.time.Duration
 import kotlin.time.Duration.Companion.milliseconds
 import kotlin.time.DurationUnit
@@ -83,7 +80,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            composeswipetodeleteTheme {
+            ComposeSwipeToDeleteTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
@@ -102,15 +99,15 @@ class MainActivity : ComponentActivity() {
                         items(
                             items = programmingLanguages,
                             key = { it }
-                        ) { language ->
+                        ) { city ->
                             SwipeToDeleteContainer(
-                                item = language,
+                                item = city,
                                 onDelete = {
-                                    programmingLanguages -= language
+                                    programmingLanguages -= city
                                 }
                             ) { _ ->
                                 Text(
-                                    text = language,
+                                    text = city,
                                     modifier = Modifier
                                         .fillMaxWidth()
                                         .background(MaterialTheme.colorScheme.background)
@@ -132,7 +129,7 @@ class MainActivity : ComponentActivity() {
 )
 @Composable
 fun DefaultPreview() {
-    composeswipetodeleteTheme {
+    ComposeSwipeToDeleteTheme {
         Surface(
             modifier = Modifier.fillMaxSize(),
             color = MaterialTheme.colorScheme.background
@@ -299,7 +296,7 @@ fun DeleteBackground(
 )
 @Composable
 fun DeleteBackgroundPreview() {
-    composeswipetodeleteTheme {
+    ComposeSwipeToDeleteTheme {
         Surface(
             modifier = Modifier.fillMaxSize(),
             color = Color.Red
