@@ -1,4 +1,4 @@
-package com.plcoding.swipetodeletecompose.ui.theme
+package com.realityexpander.composeswipetodelete.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

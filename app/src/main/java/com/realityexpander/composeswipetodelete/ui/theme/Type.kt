@@ -1,4 +1,4 @@
-package com.plcoding.swipetodeletecompose.ui.theme
+package com.realityexpander.composeswipetodelete.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

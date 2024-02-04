@@ -13,6 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "SwipeToDeleteCompose"
+rootProject.name = "composeswipetodelete"
 include(":app")
- 

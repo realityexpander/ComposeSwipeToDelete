@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.plcoding.swipetodeletecompose"
+    namespace = "com.realityexpander.composeswipetodelete"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.plcoding.swipetodeletecompose"
+        applicationId = "com.realityexpander.composeswipetodelete"
         minSdk = 24
         targetSdk = 34
         versionCode = 1

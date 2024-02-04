@@ -1,4 +1,4 @@
-package com.plcoding.swipetodeletecompose
+package com.realityexpander.composeswipetodelete
 
 import org.junit.Test
 
