@@ -56,10 +56,12 @@ val listOfCities = listOf(
     "Austin, TX",
     "Brunswick, ME",
     "Tepoztlán, Mexico",
-    "Poolesville, MD",
     "San Francisco, CA",
     "New York, NY",
     "Washington, DC",
+    "Los Angeles, CA",
+    "Chicago, IL",
+    "Berlin, Germany",
     "Another City 1",
     "Another City 2",
     "Another City 3",
@@ -86,7 +88,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    val programmingLanguages = remember {
+                    val cities = remember {
                         mutableStateListOf<String>()
                     }.also {
                         it.addAll(listOfCities)
@@ -97,13 +99,13 @@ class MainActivity : ComponentActivity() {
                             .fillMaxSize()
                     ) {
                         items(
-                            items = programmingLanguages,
+                            items = cities,
                             key = { it }
                         ) { city ->
                             SwipeToDeleteContainer(
                                 item = city,
                                 onDelete = {
-                                    programmingLanguages -= city
+                                    cities -= city
                                 }
                             ) { _ ->
                                 Text(
