@@ -22,12 +22,16 @@ private val DarkColorScheme = darkColorScheme(
     tertiary = Pink80,
     background = Color(0xFF1C1B1F),
     surface = Color(0xFF1C1B1F),
+    error = Color.Red,
+    onError = Color.Black
 )
 
 private val LightColorScheme = lightColorScheme(
     primary = Purple40,
     secondary = PurpleGrey40,
     tertiary = Pink40,
+    error = Color.Red,
+    onError = Color.Black,
 
     background = Color(0xFFFFFBFE),
     surface = Color(0xFFFFFBFE),

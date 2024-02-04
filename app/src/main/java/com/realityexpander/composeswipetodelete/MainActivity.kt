@@ -299,7 +299,7 @@ fun DeleteBackgroundPreview() {
     ComposeSwipeToDeleteTheme {
         Surface(
             modifier = Modifier.fillMaxSize(),
-            color = Color.Red
+            color = Color.Red // Does not preview properly using Material3 as of 2/4/24
         ) {
             DeleteBackground(swipeDismissState = rememberDismissState())
         }
