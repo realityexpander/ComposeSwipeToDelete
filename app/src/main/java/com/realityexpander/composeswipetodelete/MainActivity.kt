@@ -122,52 +122,6 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-@Preview(
-    showBackground = true,
-    device = "spec:width=1080px,height=1340px,dpi=440",
-    uiMode = Configuration.UI_MODE_NIGHT_YES or Configuration.UI_MODE_TYPE_NORMAL,
-)
-@Composable
-fun DefaultPreview() {
-    ComposeSwipeToDeleteTheme {
-        Surface(
-            modifier = Modifier.fillMaxSize(),
-            color = MaterialTheme.colorScheme.background
-        ) {
-            val programmingLanguages = remember {
-                mutableStateListOf<String>()
-            }.also {
-                it.addAll(listOfCities)
-            }
-
-            LazyColumn(
-                modifier = Modifier
-                    .fillMaxSize()
-            ) {
-                items(
-                    items = programmingLanguages,
-                    key = { it }
-                ) { language ->
-                    SwipeToDeleteContainer(
-                        item = language,
-                        onDelete = {
-                            programmingLanguages -= language
-                        }
-                    ) { _ ->
-                        Text(
-                            text = language,
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .background(MaterialTheme.colorScheme.background)
-                                .padding(16.dp)
-                        )
-                    }
-                }
-            }
-        }
-    }
-}
-
 @Composable
 fun <T> SwipeToDeleteContainer(
     item: T,
@@ -260,7 +214,7 @@ fun DeleteBackground(
     ) {
         Row {
             Text(
-                "Delete this item?",
+                "Delete this city?",
                 fontWeight = FontWeight.Bold,
                 color = MaterialTheme.colorScheme.onError
             )
@@ -284,6 +238,52 @@ fun DeleteBackground(
                     onDelete()
                 }
             )
+        }
+    }
+}
+
+@Preview(
+    showBackground = true,
+    device = "spec:width=1080px,height=1340px,dpi=440",
+    uiMode = Configuration.UI_MODE_NIGHT_YES or Configuration.UI_MODE_TYPE_NORMAL,
+)
+@Composable
+fun DefaultPreview() {
+    ComposeSwipeToDeleteTheme {
+        Surface(
+            modifier = Modifier.fillMaxSize(),
+            color = MaterialTheme.colorScheme.background
+        ) {
+            val programmingLanguages = remember {
+                mutableStateListOf<String>()
+            }.also {
+                it.addAll(listOfCities)
+            }
+
+            LazyColumn(
+                modifier = Modifier
+                    .fillMaxSize()
+            ) {
+                items(
+                    items = programmingLanguages,
+                    key = { it }
+                ) { language ->
+                    SwipeToDeleteContainer(
+                        item = language,
+                        onDelete = {
+                            programmingLanguages -= language
+                        }
+                    ) { _ ->
+                        Text(
+                            text = language,
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .background(MaterialTheme.colorScheme.background)
+                                .padding(16.dp)
+                        )
+                    }
+                }
+            }
         }
     }
 }
